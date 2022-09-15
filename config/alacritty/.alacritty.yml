@@ -5,7 +5,6 @@
 # set by alacritty itself.
 env:
   TERM: xterm-256color
-  WINIT_X11_SCALE_FACTOR: "1.0"
 #
 # This value is used to set the `$TERM` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
@@ -482,4 +481,4 @@ schemes:
       - { index: 16, color: "0xf4a261" }
       - { index: 17, color: "0xd67ad2" }
 
-colors: *frappe
+colors: *mocha
