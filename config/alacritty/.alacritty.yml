@@ -45,7 +45,12 @@ window:
 
   # When true, alacritty starts maximized.
   # startup_mode: Maximized
-
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux"
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
