@@ -57,7 +57,6 @@ then
   export LC_CTYPE=UTF-8
   export TERMINAL=xterm
   export TERM=xterm-256color
-  fi
   export BROWSER="open -a firefox"
 fi
 
