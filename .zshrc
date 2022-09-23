@@ -146,3 +146,6 @@ then
 fi
 
 alias python=python3.8
+
+eval "$(starship init zsh)"
+
