@@ -4,7 +4,6 @@
 command -v vim >/dev/null 2>&1 && export EDITOR=vim
 command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
 
-[ -d $HOME/workspace/git.rootknecht.net/scripts ] && export PATH=$PATH:$HOME/workspace/git.rootknecht.net/scripts
 [ -d $HOME/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 [ -d $HOME/.local/share/nvim/mason/bin ] && export PATH=$PATH:$HOME/.local/share/nvim/mason/bin
 [ -f $HOME/.shell/aliases ] && source $HOME/.shell/aliases
@@ -15,7 +14,6 @@ export NNN_OPTS=aidRU
 export NNN_TRASH=1 # trash-cli
 export NNN_PLUG='t:autojump;d:diffs;p:preview-tui'
 export NNN_FIFO=/tmp/nnn.fifo
-export SPLIT='v' # for vertical kitty splits
 
 # Colored man pages
 export LESS_TERMCAP_mb=$'\E[01;32m'
@@ -57,56 +55,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 if [[ "$OSTYPE" =~ "darwin" ]]
 then
   export LC_CTYPE=UTF-8
-  if [[ x"$KITTY_PID" == "x" ]]
-  then # not kitty
-    export TERMINAL=xterm
-    export TERM=xterm-256color
-  else
-    alias ssh='kitty +kitten ssh'
-    export TERMINAL=kitty
-    export TERM=xterm-kitty
+  export TERMINAL=xterm
+  export TERM=xterm-256color
   fi
   export BROWSER="open -a firefox"
-fi
-
-if [[ "$OSTYPE" =~ "linux" ]]
-then
-  if [[ "$DESKTOP_SESSION" =~ "xfce" ]];then
-      eval $(gnome-keyring-daemon --start)
-      export SSH_AUTH_SOCK
-  fi
-  export TERM=screen-256color
-  export TERMINAL=kitty
-  export BROWSER=firefox
-  export BROWSERCLI=lynx
-  export MAIL=/usr/bin/neomutt
-  # KDE SSH keys
-  [ -S /run/user/1000/ssh-agent.socket ] && export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
-  [ -f /usr/bin/ksshaskpass ] && export SSH_ASKPASS=/usr/bin/ksshaskpass
-
-  # basedir defaults, in case they're not already set up.
-  # http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
-  if [[ -z "$XDG_DATA_HOME" ]]; then
-    export XDG_DATA_HOME="$HOME/.local/share"
-  fi
-
-  if [[ -z "$XDG_CONFIG_HOME" ]]; then
-    export XDG_CONFIG_HOME="$HOME/.config"
-  fi
-
-  if [[ -z "$XDG_CACHE_HOME" ]]; then
-    export XDG_CACHE_HOME="$HOME/.cache"
-  fi
-
-  if [[ -z "$XDG_DATA_DIRS" ]]; then
-    export XDG_DATA_DIRS="/usr/local/share:/usr/share"
-  fi
-
-  if [[ -z "$XDG_CONFIG_DIRS" ]]; then
-    export XDG_CONFIG_DIRS="/etc/xdg"
-  else
-    export XDG_CONFIG_DIRS="/etc/xdg:$XDG_CONFIG_DIRS"
-  fi
 fi
 
 export LF_ICONS="\
@@ -270,3 +222,6 @@ ex=:\
 *.pdf=:\
 *.nix=:\
 "
+
+. "$HOME/.cargo/env"
+
