@@ -149,3 +149,5 @@ alias python=python3.8
 
 eval "$(starship init zsh)"
 
+export GOPRIVATE="gitlab.com/fampay/backend"
+
