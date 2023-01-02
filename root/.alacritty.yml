@@ -98,21 +98,6 @@ font:
   glyph_offset:
     x: 0
     y: 0
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`
-  #
-  # macOS >= 10.14.x:
-  #
-  # If the font quality on non-retina display looks bad then set
-  # `use_thin_strokes` to `true` and enable font smoothing by running the
-  # following command:
-  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
-  #
-  # This is a global setting and will require a log out or restart to take
-  # effect.
-  use_thin_strokes: true
 
 selection:
   # This string contains all characters that are used as separators for
@@ -130,7 +115,6 @@ mouse:
 mouse_bindings:
   - { mouse: Left, action: Copy }
   - { mouse: Middle, action: PasteSelection }
-
 key_bindings:
   # https://arslan.io/2018/02/05/gpu-accelerated-terminal-alacritty/
   - { key: D, mods: Command, chars: "\x01\x76" }
@@ -164,6 +148,10 @@ key_bindings:
   - { key: Key7, mods: Alt, chars: "\x1b\x4f\x52\x36" }
   - { key: Key8, mods: Alt, chars: "\x1b\x4f\x52\x37" }
   - { key: Key9, mods: Alt, chars: "\x1b\x4f\x52\x38" }
+  - { key: J, mods: Alt, chars: "\x1bj" }
+  - { key: K, mods: Alt, chars: "\x1bk" }
+  - { key: H, mods: Alt, chars: "\x1bh" }
+  - { key: L, mods: Alt, chars: "\x1bl" }
 schemes:
   frappe: &frappe # Default colors
     primary:
