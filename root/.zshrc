@@ -149,3 +149,5 @@ eval "$(starship init zsh)"
 
 export GOPRIVATE="gitlab.com/fampay/backend"
 
+alias gg='git remote set-url origin git@github.com:fampay-inc/$(basename "$PWD").git'
+alias ls='exa'
