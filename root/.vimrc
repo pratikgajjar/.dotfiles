@@ -1,22 +1,3 @@
-" Plugin Management {{{
-call plug#begin()
-
-Plug 'google/vim-jsonnet'
-" Fern - window stuff
-Plug 'lambdalisue/fern.vim'
-" Fern git status
-Plug 'lambdalisue/fern-git-status.vim'
-Plug 'tpope/vim-repeat'
-" Expand region
-Plug 'terryma/vim-expand-region'
-Plug 'tpope/vim-surround'
-" Better find and replace
-Plug 'tpope/vim-abolish'
-Plug 'itchyny/lightline.vim'
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-call plug#end()
-
-set termguicolors
 set noshowmode
 syntax enable           " enable syntax processing
 set tabstop=4       " number of visual spaces per TAB
@@ -62,7 +43,4 @@ set wrap
 
 set hidden
 set colorcolumn=88
-highlight ColorColumn ctermbg=grey guibg=black
 
-let g:lightline = {'colorscheme': 'catppuccin_mocha'}
-silent! colorscheme  catppuccin_mocha

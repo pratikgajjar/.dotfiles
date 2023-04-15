@@ -149,3 +149,5 @@ eval "$(starship init zsh)"
 
 export GOPRIVATE="gitlab.com/REDACTED"
 
+alias gg='git remote set-url origin git@github.com:REDACTED/$(basename "$PWD").git'
+alias ls='exa'

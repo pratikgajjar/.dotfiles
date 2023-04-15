@@ -28,7 +28,7 @@ window:
   padding:
     x: 0
     y: 0
-  opacity: 1.0
+  opacity: 0.98
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
 
@@ -42,6 +42,7 @@ window:
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
   decorations: full
+  option_as_alt: OnlyLeft
 
   # When true, alacritty starts maximized.
   # startup_mode: Maximized
