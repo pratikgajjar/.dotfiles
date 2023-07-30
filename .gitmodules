@@ -1,0 +1,3 @@
+[submodule "lazynvim"]
+	path = config/nvim
+	url = git@github.com:pratikgajjar/nvim.git
