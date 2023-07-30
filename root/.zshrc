@@ -151,3 +151,7 @@ export GOPRIVATE="gitlab.com/REDACTED"
 
 alias gg='git remote set-url origin git@github.com:REDACTED/$(basename "$PWD").git'
 alias ls='exa'
+alias lazygit='gitui'
+
+bindkey -s "^[[17~" "selected=\$(tsh ls | tail -n +3 | fzf | awk '{print \$1}') && [ -n \"\$selected\" ] && tsh ssh -A ubuntu@\$selected\n"
+
