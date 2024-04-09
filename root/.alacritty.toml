@@ -1,0 +1,616 @@
+[[colors.indexed_colors]]
+color = "#FAB387"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#F5E0DC"
+index = 17
+
+[colors.bright]
+black = "#585B70"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#A6ADC8"
+yellow = "#F9E2AF"
+
+[colors.cursor]
+cursor = "#F5E0DC"
+text = "#1E1E2E"
+
+[colors.dim]
+black = "#45475A"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#BAC2DE"
+yellow = "#F9E2AF"
+
+[colors.hints.end]
+background = "#A6ADC8"
+foreground = "#1E1E2E"
+
+[colors.hints.start]
+background = "#F9E2AF"
+foreground = "#1E1E2E"
+
+[colors.normal]
+black = "#45475A"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#BAC2DE"
+yellow = "#F9E2AF"
+
+[colors.primary]
+background = "#11111b"
+bright_foreground = "#CDD6F4"
+dim_foreground = "#CDD6F4"
+foreground = "#CDD6F4"
+
+[colors.search.focused_match]
+background = "#A6E3A1"
+foreground = "#1E1E2E"
+
+[colors.search.matches]
+background = "#A6ADC8"
+foreground = "#1E1E2E"
+
+[colors.selection]
+background = "#F5E0DC"
+text = "#1E1E2E"
+
+[colors.vi_mode_cursor]
+cursor = "#B4BEFE"
+text = "#1E1E2E"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 15
+
+[font.bold]
+family = "BerkeleyMonoVariable2 Nerd Font Mono"
+
+[font.bold_italic]
+family = "BerkeleyMonoVariable2 Nerd Font Mono"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "BerkeleyMonoVariable2 Nerd Font Mono"
+
+[font.normal]
+family = "BerkeleyMonoVariable2 Nerd Font Mono"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+chars = "\u0001v"
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001s"
+key = "D"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0001w"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001h"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001j"
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001k"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001l"
+key = "L"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001c"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00011"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00012"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00013"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00014"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00015"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00016"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00017"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00018"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00019"
+key = "Key9"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001H"
+key = "Left"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001J"
+key = "Down"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001K"
+key = "Up"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001L"
+key = "Right"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001BOR0"
+key = "Key1"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOR1"
+key = "Key2"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOR2"
+key = "Key3"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOR3"
+key = "Key4"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOR4"
+key = "Key5"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOR5"
+key = "Key6"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOR6"
+key = "Key7"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOR7"
+key = "Key8"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOR8"
+key = "Key9"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bj"
+key = "J"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bk"
+key = "K"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bh"
+key = "H"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bl"
+key = "L"
+mods = "Alt"
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "Copy"
+mouse = "Left"
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[[schemes.frappe.indexed_colors]]
+color = "#EF9F76"
+index = 16
+
+[[schemes.frappe.indexed_colors]]
+color = "#F2D5CF"
+index = 17
+
+[schemes.frappe.bright]
+black = "#626880"
+blue = "#8CAAEE"
+cyan = "#81C8BE"
+green = "#A6D189"
+magenta = "#F4B8E4"
+red = "#E78284"
+white = "#A5ADCE"
+yellow = "#E5C890"
+
+[schemes.frappe.cursor]
+cursor = "#F2D5CF"
+text = "#303446"
+
+[schemes.frappe.dim]
+black = "#51576D"
+blue = "#8CAAEE"
+cyan = "#81C8BE"
+green = "#A6D189"
+magenta = "#F4B8E4"
+red = "#E78284"
+white = "#B5BFE2"
+yellow = "#E5C890"
+
+[schemes.frappe.hints.end]
+background = "#A5ADCE"
+foreground = "#303446"
+
+[schemes.frappe.hints.start]
+background = "#E5C890"
+foreground = "#303446"
+
+[schemes.frappe.normal]
+black = "#51576D"
+blue = "#8CAAEE"
+cyan = "#81C8BE"
+green = "#A6D189"
+magenta = "#F4B8E4"
+red = "#E78284"
+white = "#B5BFE2"
+yellow = "#E5C890"
+
+[schemes.frappe.primary]
+background = "#303446"
+bright_foreground = "#C6D0F5"
+dim_foreground = "#C6D0F5"
+foreground = "#C6D0F5"
+
+[schemes.frappe.search.focused_match]
+background = "#A6D189"
+foreground = "#303446"
+
+[schemes.frappe.search.footer_bar]
+background = "#A5ADCE"
+foreground = "#303446"
+
+[schemes.frappe.search.matches]
+background = "#A5ADCE"
+foreground = "#303446"
+
+[schemes.frappe.selection]
+background = "#F2D5CF"
+text = "#303446"
+
+[schemes.frappe.vi_mode_cursor]
+cursor = "#BABBF1"
+text = "#303446"
+
+[schemes.gruvbox.bright]
+black = "#928374"
+blue = "#83a598"
+cyan = "#8ec07c"
+green = "#b8bb26"
+magenta = "#d3869b"
+red = "#fb4934"
+white = "#ebdbb2"
+yellow = "#fabd2f"
+
+[schemes.gruvbox.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[schemes.gruvbox.dim]
+black = "#32302f"
+blue = "#076678"
+cyan = "#427b58"
+green = "#79740e"
+magenta = "#8f3f71"
+red = "#9d0006"
+white = "#928374"
+yellow = "#b57614"
+
+[schemes.gruvbox.normal]
+black = "#282828"
+blue = "#458588"
+cyan = "#689d6a"
+green = "#98971a"
+magenta = "#b16286"
+red = "#cc241d"
+white = "#a89984"
+yellow = "#d79921"
+
+[schemes.gruvbox.primary]
+background = "#282828"
+bright_foreground = "#fbf1c7"
+dim_foreground = "#a89984"
+foreground = "#ebdbb2"
+
+[schemes.gruvbox.selection]
+background = "CellForeground"
+text = "CellBackground"
+
+[schemes.gruvbox.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[[schemes.macchiato.indexed_colors]]
+color = "#F5A97F"
+index = 16
+
+[[schemes.macchiato.indexed_colors]]
+color = "#F4DBD6"
+index = 17
+
+[schemes.macchiato.bright]
+black = "#5B6078"
+blue = "#8AADF4"
+cyan = "#8BD5CA"
+green = "#A6DA95"
+magenta = "#F5BDE6"
+red = "#ED8796"
+white = "#A5ADCB"
+yellow = "#EED49F"
+
+[schemes.macchiato.cursor]
+cursor = "#F4DBD6"
+text = "#24273A"
+
+[schemes.macchiato.dim]
+black = "#494D64"
+blue = "#8AADF4"
+cyan = "#8BD5CA"
+green = "#A6DA95"
+magenta = "#F5BDE6"
+red = "#ED8796"
+white = "#B8C0E0"
+yellow = "#EED49F"
+
+[schemes.macchiato.hints.end]
+background = "#A5ADCB"
+foreground = "#24273A"
+
+[schemes.macchiato.hints.start]
+background = "#EED49F"
+foreground = "#24273A"
+
+[schemes.macchiato.normal]
+black = "#494D64"
+blue = "#8AADF4"
+cyan = "#8BD5CA"
+green = "#A6DA95"
+magenta = "#F5BDE6"
+red = "#ED8796"
+white = "#B8C0E0"
+yellow = "#EED49F"
+
+[schemes.macchiato.primary]
+background = "#24273A"
+bright_foreground = "#CAD3F5"
+dim_foreground = "#CAD3F5"
+foreground = "#CAD3F5"
+
+[schemes.macchiato.search.focused_match]
+background = "#A6DA95"
+foreground = "#24273A"
+
+[schemes.macchiato.search.footer_bar]
+background = "#A5ADCB"
+foreground = "#24273A"
+
+[schemes.macchiato.search.matches]
+background = "#A5ADCB"
+foreground = "#24273A"
+
+[schemes.macchiato.selection]
+background = "#F4DBD6"
+text = "#24273A"
+
+[schemes.macchiato.vi_mode_cursor]
+cursor = "#B7BDF8"
+text = "#24273A"
+
+[[schemes.mocha.indexed_colors]]
+color = "#FAB387"
+index = 16
+
+[[schemes.mocha.indexed_colors]]
+color = "#F5E0DC"
+index = 17
+
+[schemes.mocha.bright]
+black = "#585B70"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#A6ADC8"
+yellow = "#F9E2AF"
+
+[schemes.mocha.cursor]
+cursor = "#F5E0DC"
+text = "#1E1E2E"
+
+[schemes.mocha.dim]
+black = "#45475A"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#BAC2DE"
+yellow = "#F9E2AF"
+
+[schemes.mocha.hints.end]
+background = "#A6ADC8"
+foreground = "#1E1E2E"
+
+[schemes.mocha.hints.start]
+background = "#F9E2AF"
+foreground = "#1E1E2E"
+
+[schemes.mocha.normal]
+black = "#45475A"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#BAC2DE"
+yellow = "#F9E2AF"
+
+[schemes.mocha.primary]
+background = "#11111b"
+bright_foreground = "#CDD6F4"
+dim_foreground = "#CDD6F4"
+foreground = "#CDD6F4"
+
+[schemes.mocha.search.focused_match]
+background = "#A6E3A1"
+foreground = "#1E1E2E"
+
+[schemes.mocha.search.footer_bar]
+background = "#A6ADC8"
+foreground = "#1E1E2E"
+
+[schemes.mocha.search.matches]
+background = "#A6ADC8"
+foreground = "#1E1E2E"
+
+[schemes.mocha.selection]
+background = "#F5E0DC"
+text = "#1E1E2E"
+
+[schemes.mocha.vi_mode_cursor]
+cursor = "#B4BEFE"
+text = "#1E1E2E"
+
+[[schemes.nightofx.indexed_colors]]
+color = "0xf4a261"
+index = 16
+
+[[schemes.nightofx.indexed_colors]]
+color = "0xd67ad2"
+index = 17
+
+[schemes.nightofx.bright]
+black = "0x575860"
+blue = "0x86abdc"
+cyan = "0x7ad4d6"
+green = "0x8ebaa4"
+magenta = "0xbaa1e2"
+red = "0xd16983"
+white = "0xe4e4e5"
+yellow = "0xe0c989"
+
+[schemes.nightofx.normal]
+black = "0x393b44"
+blue = "0x719cd6"
+cyan = "0x63cdcf"
+green = "0x81b29a"
+magenta = "0x9d79d6"
+red = "0xc94f6d"
+white = "0xdfdfe0"
+yellow = "0xdbc074"
+
+[schemes.nightofx.primary]
+background = "0x192330"
+foreground = "0xcdcecf"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[shell]
+args = ["-l", "-c", "tmux"]
+program = "/bin/zsh"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+opacity = 0.98
+option_as_alt = "OnlyLeft"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 0
+y = 0
