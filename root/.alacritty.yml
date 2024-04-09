@@ -80,13 +80,13 @@ scrolling:
 font:
   size: 15
   normal:
-    family: Liga SFMono Nerd Font
+    family: BerkeleyMonoVariable2 Nerd Font Mono
   bold:
-    family: Liga SFMono Nerd Font
+    family: BerkeleyMonoVariable2 Nerd Font Mono
   italic:
-    family: Liga SFMono Nerd Font
+    family: BerkeleyMonoVariable2 Nerd Font Mono
   bold_italic:
-    family: Liga SFMono Nerd Font
+    family: BerkeleyMonoVariable2 Nerd Font Mono
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
