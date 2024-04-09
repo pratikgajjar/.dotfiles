@@ -155,3 +155,16 @@ alias lazygit='gitui'
 
 bindkey -s "^[[17~" "selected=\$(tsh ls | tail -n +3 | fzf | awk '{print \$1}') && [ -n \"\$selected\" ] && tsh ssh -A ubuntu@\$selected\n"
 
+
+# bun completions
+[ -s "/Users/pratikgajjar/.bun/_bun" ] && source "/Users/pratikgajjar/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+. "$HOME/.cargo/env"
+
+export PATH=$HOME/development/flutter/bin:$PATH
+
+alias uber-apk-signer="java -jar /usr/local/bin/uber-apk-signer.jar"
+alias apktool="java -jar /usr/local/bin/apktool"
