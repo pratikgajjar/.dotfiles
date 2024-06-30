@@ -107,7 +107,7 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 alias g++="g++ -std=c++17"
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-alias cat="bat -p"
+alias cat="bat"
 
 export CFLAGS=$(gdal-config --cflags)
 
@@ -168,3 +168,5 @@ export PATH=$HOME/development/flutter/bin:$PATH
 
 alias uber-apk-signer="java -jar /usr/local/bin/uber-apk-signer.jar"
 alias apktool="java -jar /usr/local/bin/apktool"
+
+export GPG_TTY=$(tty)

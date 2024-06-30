@@ -1,3 +1,127 @@
+[delta "catppuccin-latte"]
+	blame-palette = "#eff1f5 #e6e9ef #dce0e8 #ccd0da #bcc0cc"
+	commit-decoration-style = "box ul"
+	dark = false
+	file-decoration-style = "#4c4f69"
+	file-style = "#4c4f69"
+	hunk-header-decoration-style = "box ul"
+	hunk-header-file-style = "bold"
+	hunk-header-line-number-style = "bold #6c6f85"
+	hunk-header-style = "file line-number syntax"
+	line-numbers = true
+	line-numbers-left-style = "#9ca0b0"
+	line-numbers-minus-style = "bold #d20f39"
+	line-numbers-plus-style = "bold #40a02b"
+	line-numbers-right-style = "#9ca0b0"
+	line-numbers-zero-style = "#9ca0b0"
+	# 25% red 75% base
+	minus-emph-style = "bold syntax #e8bac8"
+	# 10% red 90% base
+	minus-style = "syntax #eddbe2"
+	# 25% green 75% base
+	plus-emph-style = "bold syntax #c3ddc3"
+	# 10% green 90% base
+	plus-style = "syntax #dee8e0"
+	map-styles = \
+		bold purple => syntax "#d6c4f4", \
+		bold blue => syntax "#bbcff5", \
+		bold cyan => syntax "#b4dff2", \
+		bold yellow => syntax "#ebd9bf"
+	# Should match the name of the bat theme
+	syntax-theme = "Catppuccin Latte"
+[delta "catppuccin-frappe"]
+	blame-palette = "#303446 #292c3c #232634 #414559 #51576d"
+	commit-decoration-style = "box ul"
+	dark = true
+	file-decoration-style = "#c6d0f5"
+	file-style = "#c6d0f5"
+	hunk-header-decoration-style = "box ul"
+	hunk-header-file-style = "bold"
+	hunk-header-line-number-style = "bold #a5adce"
+	hunk-header-style = "file line-number syntax"
+	line-numbers = true
+	line-numbers-left-style = "#737994"
+	line-numbers-minus-style = "bold #e78284"
+	line-numbers-plus-style = "bold #a6d189"
+	line-numbers-right-style = "#737994"
+	line-numbers-zero-style = "#737994"
+	# 25% red 75% base
+	minus-emph-style = "bold syntax #5e4855"
+	# 10% red 90% base
+	minus-style = "syntax #433c4c"
+	# 25% green 75% base
+	plus-emph-style = "bold syntax #4e5c57"
+	# 10% green 90% base
+	plus-style = "syntax #3c444e"
+	map-styles = \
+		bold purple => syntax "#574f6f", \
+		bold blue => syntax "#475271", \
+		bold cyan => syntax "#4b5c6b", \
+		bold yellow => syntax "#5d5a59"
+	# Should match the name of the bat theme
+	syntax-theme = "Catppuccin Frappe"
+[delta "catppuccin-macchiato"]
+	blame-palette = "#24273a #1e2030 #181926 #363a4f #494d64"
+	commit-decoration-style = "box ul"
+	dark = true
+	file-decoration-style = "#cad3f5"
+	file-style = "#cad3f5"
+	hunk-header-decoration-style = "box ul"
+	hunk-header-file-style = "bold"
+	hunk-header-line-number-style = "bold #a5adcb"
+	hunk-header-style = "file line-number syntax"
+	line-numbers = true
+	line-numbers-left-style = "#6e738d"
+	line-numbers-minus-style = "bold #ed8796"
+	line-numbers-plus-style = "bold #a6da95"
+	line-numbers-right-style = "#6e738d"
+	line-numbers-zero-style = "#6e738d"
+	# 25% red 75% base
+	minus-emph-style = "bold syntax #564052"
+	# 10% red 90% base
+	minus-style = "syntax #383143"
+	# 25% green 75% base
+	plus-emph-style = "bold syntax #455552"
+	# 10% green 90% base
+	plus-style = "syntax #313943"
+	map-styles = \
+		bold purple => syntax "#4d4569", \
+		bold blue => syntax "#3e4868", \
+		bold cyan => syntax "#3f5365", \
+		bold yellow => syntax "#585253"
+	# Should match the name of the bat theme
+	syntax-theme = "Catppuccin Macchiato"
+[delta "catppuccin-mocha"]
+	blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a"
+	commit-decoration-style = "box ul"
+	dark = true
+	file-decoration-style = "#cdd6f4"
+	file-style = "#cdd6f4"
+	hunk-header-decoration-style = "box ul"
+	hunk-header-file-style = "bold"
+	hunk-header-line-number-style = "bold #a6adc8"
+	hunk-header-style = "file line-number syntax"
+	line-numbers = true
+	line-numbers-left-style = "#6c7086"
+	line-numbers-minus-style = "bold #f38ba8"
+	line-numbers-plus-style = "bold #a6e3a1"
+	line-numbers-right-style = "#6c7086"
+	line-numbers-zero-style = "#6c7086"
+	# 25% red 75% base
+	minus-emph-style = "bold syntax #53394c"
+	# 10% red 90% base
+	minus-style = "syntax #35293b"
+	# 25% green 75% base
+	plus-emph-style = "bold syntax #40504b"
+	# 10% green 90% base
+	plus-style = "syntax #2c333a"
+	map-styles = \
+		bold purple => syntax "#494060", \
+		bold blue => syntax "#394361", \
+		bold cyan => syntax "#384d5e", \
+		bold yellow => syntax "#544f4e"
+	# Should match the name of the bat theme
+	syntax-theme = "Catppuccin Mocha"
 # To use these themes, first include this file in your own gitconfig file:
 #
 # [include]
@@ -25,6 +149,36 @@
 #
 # 4. Feel free to include a comment line indicating who is the author of the
 #    theme. E.g. a link to your github user page.
+
+[delta "colibri"]
+    # author: https://github.com/pablospe
+    # Based on woolly-mammoth: https://github.com/Kr1ss-XD.
+    commit-decoration-style = 130 box
+    dark = true
+    file-decoration-style = "#606018" overline
+    file-added-label = [●]
+    file-copied-label = [C]
+    file-modified-label = [+]
+    file-removed-label = [⛌]
+    file-renamed-label = [→]
+    file-style = 232 bold 184
+    hunk-header-style = syntax bold italic 237
+    line-numbers = true
+    line-numbers-left-format = "{nm:>1}┊"
+    line-numbers-left-style = red
+    line-numbers-minus-style = red bold
+    line-numbers-plus-style = green bold
+    line-numbers-right-format = " {np:>1}┊"
+    line-numbers-right-style = green
+    line-numbers-zero-style = "#545474" italic
+    minus-emph-style = normal "#80002a"
+    minus-style = normal "#5e0000"
+    plus-emph-style = syntax bold "#007e5e"
+    plus-style = syntax "#003500"
+    syntax-theme = OneHalfDark
+    whitespace-error-style = "#80002a" reverse
+    zero-style = syntax
+    blame-format = "{author:<18} ({commit:>7}) ┊{timestamp:^16}┊ "
 
 [delta "collared-trogon"]
     # author: https://github.com/clnoll
@@ -208,7 +362,6 @@
     #author: https://github.com/2kabhishek
     dark = true
     side-by-side = true
-    navigate = true
     keep-plus-minus-markers = true
     hyperlinks = true
     file-added-label = [+]
@@ -243,7 +396,6 @@
     #author: https://github.com/2kabhishek
     dark = true
     side-by-side = true
-    navigate = true
     keep-plus-minus-markers = true
     file-added-label = [+]
     file-copied-label = [==]
@@ -410,3 +562,101 @@
     diff-stat-align-width         = 10
     syntax-theme                  = none
     width                         = variable
+
+[delta "mellow-barbet"]
+    # author: https://github.com/kvrohit
+    # To configure terminal colors see https://github.com/kvrohit/mellow.nvim#terminals
+    dark = true
+    syntax-theme = base16
+    line-numbers = true
+    side-by-side = true
+    file-style = brightwhite
+    file-decoration-style = none
+    file-added-label = [+]
+    file-copied-label = [==]
+    file-modified-label = [*]
+    file-removed-label = [-]
+    file-renamed-label = [->]
+    hunk-header-decoration-style = "#3e3e43" box ul
+    plus-style = brightgreen black
+    plus-emph-style = black green
+    minus-style = brightred black
+    minus-emph-style = black red
+    line-numbers-minus-style = brightred
+    line-numbers-plus-style = brightgreen
+    line-numbers-left-style = "#3e3e43"
+    line-numbers-right-style = "#3e3e43"
+    line-numbers-zero-style = "#57575f"
+    zero-style = syntax
+    whitespace-error-style = black bold
+    blame-code-style = syntax
+    blame-palette = "#161617" "#1b1b1d" "#2a2a2d" "#3e3e43"
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = yellow bold
+    merge-conflict-ours-diff-header-decoration-style = "#3e3e43" box
+    merge-conflict-theirs-diff-header-style = yellow bold
+    merge-conflict-theirs-diff-header-decoration-style = "#3e3e43" box
+
+[delta "arctic-fox"]
+    # author: https://github.com/anthony-halim
+    dark = true
+    syntax-theme = Nord
+    file-added-label = [+]
+    file-copied-label = [==]
+    file-modified-label = [*]
+    file-removed-label = [-]
+    file-renamed-label = [->]
+    file-style = omit
+    hunk-header-decoration-style = "#5E81AC" ul
+    hunk-header-file-style = blue ul bold
+    hunk-header-line-number-style = yellow box bold
+    hunk-header-style = file line-number syntax bold italic
+    plus-style = brightgreen
+    plus-emph-style = black green
+    minus-style = brightred
+    minus-emph-style = black red
+    line-numbers = true
+    line-numbers-minus-style = brightred
+    line-numbers-plus-style = brightgreen
+    line-numbers-left-style = "#5E81AC"
+    line-numbers-right-style = "#5E81AC"
+    line-numbers-zero-style = "#4C566A"
+    zero-style = syntax
+    whitespace-error-style = black bold
+    blame-code-style = syntax
+    blame-format = "{author:<18} {commit:<6} {timestamp:<15}"
+    blame-palette = "#2E3440" "#3B4252" "#434C5E"
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = yellow bold
+    merge-conflict-ours-diff-header-decoration-style = "#5E81AC" box
+    merge-conflict-theirs-diff-header-style = yellow bold
+    merge-conflict-theirs-diff-header-decoration-style = "#5E81AC" box
+
+[delta "corvus"]
+    # author: https://github.com/evilwaveforms
+    dark = true
+    commit-style = "#949494"
+    file-style = omit
+    syntax-theme = none
+    hunk-header-decoration-style = "#949494" ul
+    hunk-header-file-style = "#949494"
+    hunk-header-style = "#949494"
+    line-numbers = true
+    line-numbers-left-style = "#949494"
+    line-numbers-right-style = "#949494"
+    line-numbers-left-format = "{nm:>2}|"
+    line-numbers-right-format = "{np:>3} "
+    line-numbers-plus-style = "#54c047"
+    line-numbers-minus-style = bold "#591102"
+    plus-style = "#54c047"
+    plus-emph-style = bold "#54c047"
+    plus-non-emph-style = dim "#54c047"
+    minus-style = normal "#591102"
+    minus-emph-style = normal "#591102"
+    minus-non-emph-style = bold "#591102"
+    blame-code-style = omit
+    blame-format = "{author:<18} {commit:<6} {timestamp:<15}"
+    blame-palette = "#000000" "#343434"
+    zero-style = dim
