@@ -131,9 +131,6 @@ export PATH="/Users/$USERNAME/.pulumi/bin:/opt/homebrew/opt/curl/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias vim=nvim
 
-alias z=zoxide
-eval "$(zoxide init zsh)"
-
 trap_exit_tmux ()
 {
   # switch only when current session has only one window and one pane
