@@ -55,8 +55,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 if [[ "$OSTYPE" =~ "darwin" ]]
 then
   export LC_CTYPE=UTF-8
-  export TERMINAL=xterm
-  export TERM=xterm-256color
+  export TERMINAL=tmux
+  export TERM=tmux-256color
   export BROWSER="open -a firefox"
 fi
 
