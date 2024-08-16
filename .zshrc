@@ -99,9 +99,15 @@ ZSH_TMUX_AUTOSTART="true"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=$PATH:$HOME/.poetry/bin:/Users/pratikgajjar/go/bin
+source $HOME/shell/options
+source $HOME/shell/plugins
+source $HOME/shell/tools
+source $HOME/shell/bindings
+
+export PATH=$PATH:$HOME/.poetry/bin:/Users/$USER/go/bin
 export PATH="/opt/homebrew/opt/python@3.8/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/Users/$USER/local/bin:$PATH"
 
 
 alias g++="g++ -std=c++17"
@@ -109,7 +115,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 alias cat="bat"
 
-export CFLAGS=$(gdal-config --cflags)
+# export CFLAGS=$(gdal-config --cflags)
 
  # Nix
  if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
@@ -147,7 +153,6 @@ fi
 
 eval "$(starship init zsh)"
 
-export GOPRIVATE="gitlab.com/fampay/backend"
 
 alias gg='git remote set-url origin git@github.com:fampay-inc/$(basename "$PWD").git'
 alias ls='eza'
@@ -157,7 +162,7 @@ bindkey -s "^[[17~" "selected=\$(tsh ls | tail -n +3 | fzf | awk '{print \$1}') 
 
 
 # bun completions
-[ -s "/Users/pratikgajjar/.bun/_bun" ] && source "/Users/pratikgajjar/.bun/_bun"
+[ -s "/Users/$USER/.bun/_bun" ] && source "/Users/$USER/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
