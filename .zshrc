@@ -170,3 +170,5 @@ alias uber-apk-signer="java -jar /usr/local/bin/uber-apk-signer.jar"
 alias apktool="java -jar /usr/local/bin/apktool"
 
 export GPG_TTY=$(tty)
+
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
