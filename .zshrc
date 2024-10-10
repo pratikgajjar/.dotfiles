@@ -174,3 +174,4 @@ alias apktool="java -jar /usr/local/bin/apktool"
 export GPG_TTY=$(tty)
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias docker='podman'
