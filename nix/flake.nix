@@ -21,10 +21,8 @@
           pkgs.mkalias
           pkgs.neovim
           pkgs.tmux
-          pkgs.wezterm
           pkgs.gnupg
           pkgs.maccy
-          pkgs.rectangle
           pkgs.ripgrep
           pkgs.zoxide
           pkgs.hugo
@@ -42,6 +40,8 @@
         enable = true;
         casks = [
           "eloston-chromium"
+          "wezterm"
+          "rectangle"
         ];
       };
 
