@@ -97,10 +97,13 @@
         NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
         loginwindow.GuestEnabled = false;
         loginwindow.LoginwindowText = "Pratik's MacBook";
+        loginwindow.SHOWFULLNAME = true;
+        loginwindow.ShutDownDisabledWhileLoggedIn = true;
         screensaver.askForPassword = true;
         screensaver.askForPasswordDelay = 0;
         alf.globalstate = 1;
         alf.stealthenabled = 1;
+        screencapture.location = "~/Downloads/screencapture";
       };
 
       # Auto upgrade nix package and the daemon service.
