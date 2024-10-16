@@ -42,6 +42,7 @@
           "eloston-chromium"
           "wezterm"
           "rectangle"
+          "openmtp"
         ];
       };
 
@@ -68,6 +69,39 @@
             ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
             done
             '';
+
+      # macos system settings
+      system.defaults = {
+        dock.autohide = true;
+        dock.orientation = "right";
+        dock.persistent-apps = [
+          "/Applications/Firefox.app"
+          "/Applications/Chromium.app"
+          "/Applications/WezTerm.app"
+          "/Applications/Zed.app"
+          "/Applications/Thunderbird.app"
+        ];
+        dock.tilesize = 48;
+        finder.ShowPathbar = true;
+        finder.ShowStatusBar = true;
+        finder.FXPreferredViewStyle = "Nlsv";
+        finder._FXSortFoldersFirst = true;
+        finder.FXDefaultSearchScope = "SCcf";
+        trackpad.Clicking = true;
+        NSGlobalDomain.ApplePressAndHoldEnabled = false;
+        NSGlobalDomain.AppleInterfaceStyle = "Dark";
+        NSGlobalDomain.AppleInterfaceStyleSwitchesAutomatically = false;
+        NSGlobalDomain.KeyRepeat = 2;
+        NSGlobalDomain.NSDocumentSaveNewDocumentsToCloud = false;
+        NSGlobalDomain."com.apple.keyboard.fnState" = true;
+        NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
+        loginwindow.GuestEnabled = false;
+        loginwindow.LoginwindowText = "Pratik's MacBook";
+        screensaver.askForPassword = true;
+        screensaver.askForPasswordDelay = 0;
+        alf.globalstate = 1;
+        alf.stealthenabled = 1;
+      };
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
