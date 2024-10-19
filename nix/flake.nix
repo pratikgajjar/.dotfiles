@@ -43,6 +43,7 @@
           "wezterm"
           "rectangle"
           "openmtp"
+          "podman-desktop"
         ];
       };
 
