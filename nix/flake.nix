@@ -34,6 +34,9 @@
           pkgs.eza
           pkgs.neofetch
           pkgs.yt-dlp
+          pkgs.podman
+          pkgs.podman-compose
+          pkgs.podman-tui
         ];
 
       homebrew = {
@@ -43,7 +46,6 @@
           "wezterm"
           "rectangle"
           "openmtp"
-          "podman-desktop"
         ];
       };
 
