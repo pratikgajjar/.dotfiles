@@ -37,6 +37,7 @@
           pkgs.podman
           pkgs.podman-compose
           pkgs.podman-tui
+          pkgs.android-tools
         ];
 
       homebrew = {
