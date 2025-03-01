@@ -38,12 +38,14 @@
           pkgs.podman-compose
           pkgs.podman-tui
           pkgs.android-tools
+          pkgs.nodejs
         ];
 
       homebrew = {
         enable = true;
         casks = [
           "eloston-chromium"
+          "librewolf"
           "wezterm"
           "rectangle"
           "openmtp"
