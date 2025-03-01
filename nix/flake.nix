@@ -53,7 +53,7 @@
       };
 
       fonts.packages = [
-        (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        pkgs.nerd-fonts.jetbrains-mono
       ];
 
       system.activationScripts.applications.text = let
@@ -69,7 +69,7 @@
         rm -rf /Applications/Nix\ Apps
         mkdir -p /Applications/Nix\ Apps
         find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-        while read src; do
+        while read -r src; do
           app_name=$(basename "$src")
             echo "copying $src" >&2
             ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
@@ -81,11 +81,11 @@
         dock.autohide = true;
         dock.orientation = "right";
         dock.persistent-apps = [
-          "/Applications/Firefox.app"
+          "/Applications/LibreWolf.app"
+          "/Applications/Thunderbird.app"
           "/Applications/Chromium.app"
           "/Applications/WezTerm.app"
           "/Applications/Zed.app"
-          "/Applications/Thunderbird.app"
         ];
         dock.tilesize = 48;
         finder.ShowPathbar = true;
@@ -113,7 +113,6 @@
       };
 
       # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
       # nix.package = pkgs.nix;
 
       # Necessary for using flakes on this system.
