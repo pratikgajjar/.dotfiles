@@ -49,6 +49,7 @@
           "wezterm"
           "rectangle"
           "openmtp"
+          "anki"
         ];
       };
 
