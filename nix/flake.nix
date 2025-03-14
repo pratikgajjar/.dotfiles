@@ -40,6 +40,7 @@
           pkgs.android-tools
           pkgs.nodejs
           pkgs.shadowsocks-rust
+          pkgs.shadowsocks-libev
         ];
 
       homebrew = {
