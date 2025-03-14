@@ -39,6 +39,7 @@
           pkgs.podman-tui
           pkgs.android-tools
           pkgs.nodejs
+          pkgs.shadowsocks-rust
         ];
 
       homebrew = {
