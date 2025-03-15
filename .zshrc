@@ -175,3 +175,6 @@ export GPG_TTY=$(tty)
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias docker='podman'
+
+# Added by Windsurf
+export PATH="/Users/pratikgajjar/.codeium/windsurf/bin:$PATH"
