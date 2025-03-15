@@ -52,6 +52,7 @@
           "rectangle"
           "openmtp"
           "anki"
+          "podman-desktop"
         ];
       };
 
