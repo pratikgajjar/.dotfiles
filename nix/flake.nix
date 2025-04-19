@@ -53,6 +53,7 @@
           "openmtp"
           "anki"
           "podman-desktop"
+          "ghostty"
         ];
       };
 
@@ -89,6 +90,7 @@
           "/Applications/Thunderbird.app"
           "/Applications/Chromium.app"
           "/Applications/WezTerm.app"
+          "/Applications/Ghostty.app"
           "/Applications/Zed.app"
         ];
         dock.tilesize = 48;

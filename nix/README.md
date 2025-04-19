@@ -13,6 +13,8 @@ nix flake init -t nix-darwin --extra-experimental-features  "nix-command flakes"
 
 nix run nix-darwin --extra-experimental-features  "nix-command flakes" -- switch --flake ~/nix#m3max
 
+nix flake update
+
 darwin-rebuild switch --flake ~/nix#m3max
 
 ```
