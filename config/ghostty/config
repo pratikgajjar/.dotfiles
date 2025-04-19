@@ -1,0 +1,46 @@
+# background = #100f0f
+# foreground = #cdd6f4
+# selection-background = #585b70
+# selection-foreground = #cdd6f4
+
+# Cursor settings
+cursor-style = block
+#
+#font-family = BerkeleyMonoVariable2 Nerd Font Mono
+font-size = 12
+theme = catppuccin-mocha
+
+# Window settings
+window-theme = dark
+background-opacity = 0.98
+
+# Graphics/Performance
+shell-integration = zsh
+
+# Map Super+t to send Ctrl+a then c
+keybind = super+t=text:\x01c
+
+# Map Super+w to send Ctrl+a then w
+keybind = super+w=text:\x01w
+
+# resize
+keybind = super+shift+h=text:\x01H
+keybind = super+shift+j=text:\x01J
+keybind = super+shift+k=text:\x01K
+keybind = super+shift+l=text:\x01L
+
+# splits 
+keybind = super+d=text:\x01v
+keybind = super+shift+d=text:\x01s
+
+# Number keys
+keybind = super+1=text:\x011
+keybind = super+2=text:\x012
+keybind = super+3=text:\x013
+keybind = super+4=text:\x014
+keybind = super+5=text:\x015
+keybind = super+6=text:\x016
+keybind = super+7=text:\x017
+keybind = super+8=text:\x018
+keybind = super+9=text:\x019
+
