@@ -48,7 +48,6 @@
         casks = [
           "eloston-chromium"
           "librewolf"
-          "wezterm"
           "rectangle"
           "openmtp"
           "anki"
@@ -89,7 +88,6 @@
           "/Applications/LibreWolf.app"
           "/Applications/Thunderbird.app"
           "/Applications/Chromium.app"
-          "/Applications/WezTerm.app"
           "/Applications/Ghostty.app"
           "/Applications/Zed.app"
         ];
