@@ -41,6 +41,7 @@
           pkgs.nodejs
           pkgs.shadowsocks-rust
           pkgs.shadowsocks-libev
+          pkgs.postgresql
         ];
 
       homebrew = {
