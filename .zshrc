@@ -159,3 +159,5 @@ alias docker='podman'
 
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 export XDG_CONFIG_HOME=$HOME/.config
+export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
+
