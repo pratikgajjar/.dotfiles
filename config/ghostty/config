@@ -18,29 +18,29 @@ background-opacity = 0.98
 shell-integration = zsh
 
 # Map Super+t to send Ctrl+a then c
-keybind = super+t=text:\x01c
+keybind = super+t=text:`c
 
 # Map Super+w to send Ctrl+a then w
-keybind = super+w=text:\x01w
+keybind = super+w=text:`w
 
 # resize
-keybind = super+shift+h=text:\x01H
-keybind = super+shift+j=text:\x01J
-keybind = super+shift+k=text:\x01K
-keybind = super+shift+l=text:\x01L
+keybind = super+shift+h=text:`H
+keybind = super+shift+j=text:`J
+keybind = super+shift+k=text:`K
+keybind = super+shift+l=text:`L
 
 # splits 
-keybind = super+d=text:\x01v
-keybind = super+shift+d=text:\x01s
+keybind = super+d=text:`v
+keybind = super+shift+d=text:`s
 
 # Number keys
-keybind = super+1=text:\x011
-keybind = super+2=text:\x012
-keybind = super+3=text:\x013
-keybind = super+4=text:\x014
-keybind = super+5=text:\x015
-keybind = super+6=text:\x016
-keybind = super+7=text:\x017
-keybind = super+8=text:\x018
-keybind = super+9=text:\x019
+keybind = super+1=text:`1
+keybind = super+2=text:`2
+keybind = super+3=text:`3
+keybind = super+4=text:`4
+keybind = super+5=text:`5
+keybind = super+6=text:`6
+keybind = super+7=text:`7
+keybind = super+8=text:`8
+keybind = super+9=text:`9
 

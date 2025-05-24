@@ -102,7 +102,7 @@ ZSH_TMUX_AUTOSTART="true"
 source $HOME/shell/options
 source $HOME/shell/plugins
 source $HOME/shell/tools
-source $HOME/shell/bindings
+#source $HOME/shell/bindings
 
 export PATH=$PATH:$HOME/.poetry/bin:/Users/$USER/go/bin
 export PATH="/opt/homebrew/opt/python@3.8/bin:$PATH"
@@ -130,26 +130,7 @@ export PATH="/Users/$USERNAME/.pulumi/bin:/opt/homebrew/opt/curl/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias vim=nvim
-
-trap_exit_tmux ()
-{
-  # switch only when current session has only one window and one pane
-  if [ $(tmux list-panes | wc -l) -eq 1 ] && [ $(tmux list-windows | wc -l) -eq 1 ]; then
-    tmux switch-client -t 0
-  fi
-}
-
-if [[ $- == *i* ]]
-then
-  # activate trap only when inside tmux so that I can open Terminals that don't trigger the trap
-  if [[ $TERM_PROGRAM = "tmux" ]]
-  then
-    trap trap_exit_tmux EXIT
-  fi
-fi
-
 eval "$(starship init zsh)"
-
 
 alias gg='git remote set-url origin git@github.com:fampay-inc/$(basename "$PWD").git'
 alias ls='eza'
@@ -176,5 +157,5 @@ export GPG_TTY=$(tty)
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias docker='podman'
 
-# Added by Windsurf
-export PATH="/Users/pratikgajjar/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+export XDG_CONFIG_HOME=$HOME/.config
