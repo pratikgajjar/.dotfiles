@@ -4,5 +4,3 @@
 [ -f $HOME/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $HOME/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -d $HOME/.shell/zsh-completions/ ] && fpath=($HOME/.shell/zsh-completions/src $fpath)
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[ -f $HOME/.shell/powerlevel10k/powerlevel10k.zsh-theme ] && source $HOME/.shell/powerlevel10k/powerlevel10k.zsh-theme
