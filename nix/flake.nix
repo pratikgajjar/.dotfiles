@@ -142,9 +142,13 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."m3max" = nix-darwin.lib.darwinSystem {
+      system = "arch64-darwin";
       modules = [ 
         configuration
         nix-homebrew.darwinModules.nix-homebrew
+        {
+            system.primaryUser = "pratikgajjar";
+        }
         {
           nix-homebrew = {
             # Install Homebrew under the default prefix
