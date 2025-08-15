@@ -14,10 +14,10 @@
     configuration = { pkgs, config, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      nixpkgs.config.allowUnfree = true; 
+      nixpkgs.config.allowUnfree = true;
 
       environment.systemPackages =
-        [ 
+        [
           pkgs.mkalias
           pkgs.neovim
           pkgs.tmux
@@ -42,18 +42,36 @@
           pkgs.shadowsocks-rust
           pkgs.shadowsocks-libev
           pkgs.postgresql
+          pkgs.gh
+          pkgs.delta
+          pkgs.starship
+          pkgs.tree
+          pkgs.inetutils
+          pkgs.exiftool
+          pkgs.ffmpeg
+          pkgs.pipx
+          pkgs.valkey
+          pkgs.typst
+          pkgs.nodejs
         ];
 
       homebrew = {
         enable = true;
+        brews = [
+          "mackup"
+          "oha"
+          "telnet"
+        ];
         casks = [
-          "eloston-chromium"
+          "ungoogled-chromium"
           "librewolf"
           "rectangle"
-          "openmtp"
           "anki"
           "podman-desktop"
           "ghostty"
+          "bruno"
+          "obsidian"
+          "stats"
         ];
       };
 
@@ -142,8 +160,8 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."m3max" = nix-darwin.lib.darwinSystem {
-      system = "arch64-darwin";
-      modules = [ 
+      system = "aarch64-darwin";
+      modules = [
         configuration
         nix-homebrew.darwinModules.nix-homebrew
         {
