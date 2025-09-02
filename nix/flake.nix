@@ -12,6 +12,12 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew}:
   let
     configuration = { pkgs, config, ... }: {
+      # Application firewall settings
+      networking.applicationFirewall = {
+        enable = true;
+        enableStealthMode = true;
+        blockAllIncoming = false;
+      };
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       nixpkgs.config.allowUnfree = true;
@@ -52,7 +58,6 @@
           pkgs.pipx
           pkgs.valkey
           pkgs.typst
-          pkgs.nodejs
         ];
 
       homebrew = {
@@ -130,8 +135,8 @@
         loginwindow.ShutDownDisabledWhileLoggedIn = true;
         screensaver.askForPassword = true;
         screensaver.askForPasswordDelay = 0;
-        alf.globalstate = 1;
-        alf.stealthenabled = 1;
+        # Firewall settings using new options
+        # Note: These need to be set at the top level, not under system.defaults
         screencapture.location = "~/Downloads/screencapture";
       };
 
