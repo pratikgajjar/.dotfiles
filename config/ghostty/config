@@ -1,3 +1,4 @@
+# Colors
 # background = #100f0f
 # foreground = #cdd6f4
 # selection-background = #585b70
@@ -5,10 +6,14 @@
 
 # Cursor settings
 cursor-style = block
-#
-#font-family = BerkeleyMonoVariable2 Nerd Font Mono
-font-size = 12
-theme = catppuccin-mocha
+
+theme = Catppuccin Mocha
+
+# Font
+font-size = 14
+#font-family = SF Mono
+font-family = BerkeleyMonoVariable2 Nerd Font Mono
+
 
 # Window settings
 window-theme = dark
@@ -17,30 +22,31 @@ background-opacity = 0.98
 # Graphics/Performance
 shell-integration = zsh
 
-# Map Super+t to send Ctrl+a then c
-keybind = super+t=text:`c
+# Keybinds (send backtick ` then the target char)
 
-# Map Super+w to send Ctrl+a then w
-keybind = super+w=text:`w
+# Map Super+t to send ` then c
+keybind = super+t=text:\u{0060}c
+
+# Map Super+w to send ` then w
+keybind = super+w=text:\u{0060}w
 
 # resize
-keybind = super+shift+h=text:`H
-keybind = super+shift+j=text:`J
-keybind = super+shift+k=text:`K
-keybind = super+shift+l=text:`L
+keybind = super+shift+h=text:\u{0060}H
+keybind = super+shift+j=text:\u{0060}J
+keybind = super+shift+k=text:\u{0060}K
+keybind = super+shift+l=text:\u{0060}L
 
-# splits 
-keybind = super+d=text:`v
-keybind = super+shift+d=text:`s
+# splits
+keybind = super+d=text:\u{0060}v
+keybind = super+shift+d=text:\u{0060}s
 
-# Number keys
-keybind = super+1=text:`1
-keybind = super+2=text:`2
-keybind = super+3=text:`3
-keybind = super+4=text:`4
-keybind = super+5=text:`5
-keybind = super+6=text:`6
-keybind = super+7=text:`7
-keybind = super+8=text:`8
-keybind = super+9=text:`9
+keybind = super+Digit1=text:\u{0060}1
+keybind = super+Digit2=text:\u{0060}2
+keybind = super+Digit3=text:\u{0060}3
+keybind = super+Digit4=text:\u{0060}4
+keybind = super+Digit5=text:\u{0060}5
+keybind = super+Digit6=text:\u{0060}6
+keybind = super+Digit7=text:\u{0060}7
+keybind = super+Digit8=text:\u{0060}8
+keybind = super+Digit9=text:\u{0060}9
 
