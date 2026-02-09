@@ -1,0 +1,75 @@
+# Secrets and credentials
+*.key
+*.pem
+*.crt
+*.cer
+*.p12
+*.pfx
+.env
+.env.*
+!.env.example
+credentials.json
+credentials
+secrets.yaml
+secrets.yml
+*secret*
+*password*
+*token*
+*.age
+*.gpg
+
+# SSH keys
+.ssh/id_*
+.ssh/*.key
+.ssh/known_hosts
+.ssh/authorized_keys
+
+# GPG keys
+.gnupg/*.key
+.gnupg/*~
+.gnupg/*.gpg
+.gnupg/random_seed
+
+# AWS credentials
+.aws/credentials
+.aws/config
+
+# GCP credentials
+.config/gcloud/credentials*
+.config/gcloud/access_tokens.db
+.config/gcloud/legacy_credentials
+
+# Other cloud providers
+.azure/credentials
+.kube/config
+
+# API keys and tokens
+.netrc
+.npmrc
+.yarnrc
+
+# History files (may contain sensitive commands)
+.*_history
+.zsh_history
+.bash_history
+.python_history
+.node_repl_history
+.mysql_history
+.psql_history
+
+# Local overrides
+*.local
+
+# Backup files
+*~
+*.bak
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Tmux resurrect files (contain session data)
+.tmux/resurrect/
+.config/tmux/resurrect/
