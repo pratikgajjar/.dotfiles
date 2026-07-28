@@ -2,6 +2,8 @@
 
 My personal nix-darwin configuration for macOS with automatic system setup, package management, and system defaults.
 
+Part of the [dotfiles](https://github.com/pratikgajjar/.dotfiles) bare repo — checked out at `~/nix`, no separate clone needed (see root README for setup).
+
 ## Initial Setup
 
 ### 1. Install Nix
@@ -10,12 +12,9 @@ My personal nix-darwin configuration for macOS with automatic system setup, pack
 sh <(curl -L https://nixos.org/nix/install)
 ```
 
-### 2. Clone this repository
+### 2. Check out dotfiles
 
-```sh
-git clone <your-repo-url> ~/nix
-cd ~/nix
-```
+The dotfiles bare-repo checkout (root README) places this config at `~/nix`.
 
 ### 3. Build and apply the configuration
 
