@@ -1,5 +1,86 @@
 # vim: ft=sh
 
+#-------- AWS EC2 SSM Connect {{{
+#------------------------------------------------------
+# DESC: List EC2 instances and connect via SSM (with 24h cache)
+ec2-ssm() {
+  local cache_dir="$HOME/.cache/ec2-ssm"
+  local cache_ttl=86400  # 24 hours in seconds
+  
+  mkdir -p "$cache_dir"
+
+  # Select profile (override list via $EC2_SSM_PROFILES, newline-separated)
+  local profile=$(echo "${EC2_SSM_PROFILES:-$(aws configure list-profiles)}" | \
+    fzf --header="Select AWS profile")
+  
+  if [[ -z "$profile" ]]; then
+    echo "No profile selected"
+    return 1
+  fi
+
+  # Check if SSO session is valid for selected profile
+  if ! aws sts get-caller-identity --profile "$profile" &>/dev/null; then
+    echo "AWS SSO session expired for $profile. Logging in..."
+    aws sso login --profile "$profile"
+    if [[ $? -ne 0 ]]; then
+      echo "SSO login failed"
+      return 1
+    fi
+  fi
+
+  # Region from AWS config for the profile
+  local region=$(aws configure get region --profile "$profile")
+  region=${region:-${AWS_DEFAULT_REGION:-us-east-1}}
+
+  echo "Using profile: $profile, region: $region"
+  
+  # Cache file per profile
+  local cache_file="$cache_dir/${profile}-${region}.cache"
+  local instances=""
+  
+  # Check if cache exists and is fresh (less than 24h old)
+  if [[ -f "$cache_file" ]]; then
+    local cache_age=$(( $(date +%s) - $(stat -f %m "$cache_file") ))
+    if [[ $cache_age -lt $cache_ttl ]]; then
+      echo "Using cached instance list (age: $((cache_age / 3600))h $((cache_age % 3600 / 60))m)"
+      instances=$(cat "$cache_file")
+    fi
+  fi
+  
+  # Fetch fresh data if cache miss or expired
+  if [[ -z "$instances" ]]; then
+    echo "Fetching EC2 instances..."
+    instances=$(aws ec2 describe-instances \
+      --profile "$profile" \
+      --region "$region" \
+      --filters "Name=instance-state-name,Values=running" \
+      --query 'Reservations[].Instances[].[InstanceId,Tags[?Key==`Name`].Value | [0],PrivateIpAddress,InstanceType]' \
+      --output text | column -t)
+    
+    # Save to cache
+    echo "$instances" > "$cache_file"
+  fi
+  
+  # Select instance
+  local selected=$(echo "$instances" | \
+    fzf --header="Select EC2 instance (profile: $profile, region: $region) [Ctrl-R to refresh]" \
+        --bind "ctrl-r:reload(aws ec2 describe-instances --profile $profile --region $region --filters 'Name=instance-state-name,Values=running' --query 'Reservations[].Instances[].[InstanceId,Tags[?\`Key\`==\\\`Name\\\`].Value | [0],PrivateIpAddress,InstanceType]' --output text | column -t | tee $cache_file)" | \
+    awk '{print $1}')
+  
+  if [[ -n "$selected" ]]; then
+    echo "Connecting to $selected via SSM..."
+    set -ex
+    aws ssm start-session --target "$selected" --region "$region" --profile "$profile"
+  fi
+}
+
+# Clear EC2 SSM cache
+ec2-ssm-clear-cache() {
+  rm -rf "$HOME/.cache/ec2-ssm"
+  echo "EC2 SSM cache cleared"
+}
+#}}}
+
 #-------- Virtualbox CLI {{{
 #------------------------------------------------------
 # DESC: Virtualbox is a general-purpose full virtualizer for x86 hardware, targeted at server, desktop and embedded use

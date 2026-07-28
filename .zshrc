@@ -102,6 +102,8 @@ ZSH_TMUX_AUTOSTART="true"
 source $HOME/shell/options
 source $HOME/shell/plugins
 source $HOME/shell/tools
+source $HOME/shell/funcs
+source $HOME/shell/aliases
 #source $HOME/shell/bindings
 
 export PATH=$PATH:$HOME/.poetry/bin:/Users/$USER/go/bin
@@ -132,11 +134,11 @@ export PATH="/Users/$USERNAME/.pulumi/bin:/opt/homebrew/opt/curl/bin:$PATH"
 alias vim=nvim
 eval "$(starship init zsh)"
 
-alias gg='git remote set-url origin git@github.com:REDACTED/$(basename "$PWD").git'
 alias ls='eza'
-alias lazygit='gitui'
+export CLAUDE_CODE_NO_FLICKER=1
 
-bindkey -s "^[[17~" "selected=\$(tsh ls | tail -n +3 | fzf | awk '{print \$1}') && [ -n \"\$selected\" ] && tsh ssh -A ubuntu@\$selected\n"
+# F6 - EC2 instance selector with SSM
+bindkey -s "^[[17~" 'ec2-ssm\n'
 
 
 # bun completions
@@ -156,8 +158,33 @@ export GPG_TTY=$(tty)
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias docker='podman'
+# Machine/work-specific secrets & aliases (gitignored)
+[ -f "$HOME/shell/private" ] && source "$HOME/shell/private"
+alias codex-yolo="codex --dangerously-bypass-approvals-and-sandbox"
 
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
 
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
+# direnv + nix-direnv for auto-activating nix dev shells
+eval "$(direnv hook zsh)"
+source $HOME/.nix-profile/share/nix-direnv/direnvrc
+
+# Added by Antigravity
+export PATH="/Users/pratikgajjar/.antigravity/antigravity/bin:$PATH"
+alias librewolf-fix="xattr -dr com.apple.quarantine /Applications/LibreWolf.app"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# override oh-my-zsh gcm to use main
+alias gcm='git checkout main'
+
+# Save tmux session (resurrect) then reboot — restores exact layout on next boot
+alias reboot-save='~/.config/tmux/plugins/tmux-resurrect/scripts/save.sh && sudo reboot'

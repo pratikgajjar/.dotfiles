@@ -77,6 +77,8 @@
           "bruno"
           "obsidian"
           "stats"
+          "claude-code"
+          "codex"
         ];
       };
 

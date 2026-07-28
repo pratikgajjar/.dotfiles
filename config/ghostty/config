@@ -11,9 +11,10 @@ theme = Catppuccin Mocha
 
 # Font
 font-size = 14
-#font-family = SF Mono
-font-family = BerkeleyMonoVariable2 Nerd Font Mono
-
+# font-family = SF Mono
+# font-family = BerkeleyMonoVariable2 Nerd Font Mono
+font-family = JetBrainsMono Nerd Font Mono
+font-synthetic-style = no-bold,no-italic
 
 # Window settings
 window-theme = dark
