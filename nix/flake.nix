@@ -3,13 +3,19 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     # Setup homebrew
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # Override nix-homebrew's pinned brew — casks need >=6.0.13 (command_wrapper artifact)
+    brew-src = {
+      url = "github:Homebrew/brew/6.0.13";
+      flake = false;
+    };
+    nix-homebrew.inputs.brew-src.follows = "brew-src";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew}:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, ... }:
   let
     configuration = { pkgs, config, ... }: {
       # Application firewall settings
@@ -38,7 +44,7 @@
           pkgs.fd
           pkgs.bat
           pkgs.eza
-          pkgs.neofetch
+          pkgs.fastfetch
           pkgs.yt-dlp
           pkgs.podman
           pkgs.podman-compose
@@ -55,9 +61,31 @@
           pkgs.inetutils
           pkgs.exiftool
           pkgs.ffmpeg
-          pkgs.pipx
           pkgs.valkey
           pkgs.typst
+          # shell environment deps (sourced/aliased in dotfiles)
+          pkgs.atuin
+          pkgs.direnv
+          pkgs.nix-direnv
+          pkgs.gitui
+          pkgs.tig
+          pkgs.lf
+          # modern CLI replacements (shell/aliases)
+          pkgs.dust
+          pkgs.dua
+          pkgs.duf
+          pkgs.glow
+          pkgs.gping
+          pkgs.hexyl
+          pkgs.ouch
+          pkgs.sd
+          pkgs.procs
+          pkgs.btop
+          pkgs.tealdeer
+          pkgs.doggo
+          pkgs.viddy
+          pkgs.tokei
+          pkgs.kubectx
         ];
 
       homebrew = {
@@ -65,7 +93,6 @@
         brews = [
           "mackup"
           "oha"
-          "telnet"
         ];
         casks = [
           "ungoogled-chromium"
@@ -77,7 +104,14 @@
           "bruno"
           "obsidian"
           "stats"
-          "claude-code"
+          "finicky"
+          "tailscale-app"
+          "spotify"
+          "codexbar"
+          "gcloud-cli"
+          "mqttx"
+          "openmtp"
+          "claude-code@latest"
           "codex"
         ];
       };
@@ -90,7 +124,7 @@
         env = pkgs.buildEnv {
           name = "system-applications";
           paths = config.environment.systemPackages;
-          pathsToLink = "/Applications";
+          pathsToLink = [ "/Applications" ];
         };
       in
         pkgs.lib.mkForce ''
@@ -193,6 +227,6 @@
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."simple".pkgs;
+    darwinPackages = self.darwinConfigurations."m3max".pkgs;
   };
 }

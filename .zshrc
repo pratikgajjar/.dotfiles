@@ -167,13 +167,14 @@ export XDG_CONFIG_HOME=$HOME/.config
 export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
 
 
-. "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh)"
+[ -f "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
+command -v atuin >/dev/null && eval "$(atuin init zsh)"
 
 # direnv + nix-direnv for auto-activating nix dev shells
-eval "$(direnv hook zsh)"
-source $HOME/.nix-profile/share/nix-direnv/direnvrc
+command -v direnv >/dev/null && eval "$(direnv hook zsh)"
+for _d in /run/current-system/sw $HOME/.nix-profile; do
+  [ -f "$_d/share/nix-direnv/direnvrc" ] && source "$_d/share/nix-direnv/direnvrc" && break
+done
 
 # Added by Antigravity
 export PATH="/Users/pratikgajjar/.antigravity/antigravity/bin:$PATH"
