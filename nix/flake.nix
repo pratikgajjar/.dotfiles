@@ -107,10 +107,7 @@
           "finicky"
           "tailscale-app"
           "spotify"
-          "codexbar"
           "gcloud-cli"
-          "mqttx"
-          "openmtp"
           "claude-code@latest"
           "codex"
         ];

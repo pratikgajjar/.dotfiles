@@ -189,3 +189,4 @@ alias gcm='git checkout main'
 
 # Save tmux session (resurrect) then reboot — restores exact layout on next boot
 alias reboot-save='~/.config/tmux/plugins/tmux-resurrect/scripts/save.sh && sudo reboot'
+alias codex="codex-yolo"

@@ -16,7 +16,19 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dot checkout
 dot config status.showUntrackedFiles no
 dot submodule update --init
+
+# XDG symlinks (configs live under ~/config, apps read ~/.config)
+ln -sfn $HOME/config/ghostty $HOME/.config/ghostty   # without this, Cmd->tmux keybinds don't load
+ln -sfn $HOME/config/nvim    $HOME/.config/nvim
+
+# tmux plugin manager (then press prefix + I inside tmux)
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+
+# nix-darwin system
+nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake $HOME/nix#m3max
 ```
+
+Not in the repo, set up by hand: `~/.gitconfig`, SSH/GPG keys, `~/shell/private` (work-specific aliases), `atuin login`.
 
 ## What's inside
 
