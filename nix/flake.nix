@@ -90,6 +90,9 @@
 
       homebrew = {
         enable = true;
+        # Third-party taps. New machines must also run:
+        #   brew trust pratikgajjar/tap
+        taps = [ "pratikgajjar/tap" ];
         brews = [
           "mackup"
           "oha"
