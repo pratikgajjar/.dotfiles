@@ -149,19 +149,31 @@
           "/Applications/Zed.app"
         ];
         dock.tilesize = 48;
+        dock.show-recents = false;
+        dock.mru-spaces = false;
+        # Hot corner: bottom-right = Quick Note (14)
+        dock.wvous-br-corner = 14;
         finder.ShowPathbar = true;
         finder.ShowStatusBar = true;
         finder.FXPreferredViewStyle = "Nlsv";
         finder._FXSortFoldersFirst = true;
         finder.FXDefaultSearchScope = "SCcf";
+        finder.ShowExternalHardDrivesOnDesktop = true;
         trackpad.Clicking = true;
+        trackpad.TrackpadRightClick = true;
+        trackpad.TrackpadThreeFingerDrag = false;
+        trackpad.FirstClickThreshold = 1;
         NSGlobalDomain.ApplePressAndHoldEnabled = false;
         NSGlobalDomain.AppleInterfaceStyle = "Dark";
         NSGlobalDomain.AppleInterfaceStyleSwitchesAutomatically = false;
         NSGlobalDomain.KeyRepeat = 2;
         NSGlobalDomain.NSDocumentSaveNewDocumentsToCloud = false;
+        # F1-F12 act as standard function keys; media/volume need the Fn key
         NSGlobalDomain."com.apple.keyboard.fnState" = true;
+        NSGlobalDomain.InitialKeyRepeat = 15;
         NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
+        # Finder/Mail sidebar icon size: 1 = small, 2 = medium, 3 = large
+        NSGlobalDomain.NSTableViewDefaultSizeMode = 1;
         loginwindow.GuestEnabled = false;
         loginwindow.LoginwindowText = "Pratik's MacBook";
         loginwindow.SHOWFULLNAME = true;
@@ -171,6 +183,7 @@
         # Firewall settings using new options
         # Note: These need to be set at the top level, not under system.defaults
         screencapture.location = "~/Downloads/screencapture";
+        screencapture.type = "png";
       };
 
       # Auto upgrade nix package and the daemon service.
