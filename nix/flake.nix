@@ -110,6 +110,29 @@
           "gcloud-cli"
           "claude-code@latest"
           "codex"
+          "cursor"
+          "zed"
+          # Comms & notes
+          "slack"
+          "discord"
+          "notion"
+          "linear"
+          "thunderbird"
+          # Security & network
+          "bitwarden"
+          "lulu"
+          "mullvad-vpn"
+          "parsec"
+          "cyberduck"
+          # Media & misc
+          "vlc"
+          "utm"
+          "godot"
+          "arduino-ide"
+          "ollama-app"
+          "chatgpt"
+          "recall"
+          "android-platform-tools"
         ];
       };
 
