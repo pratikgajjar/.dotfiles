@@ -15,7 +15,9 @@ git clone --bare git@github.com:pratikgajjar/.dotfiles.git $HOME/.dotfiles
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dot checkout
 dot config status.showUntrackedFiles no
-dot submodule update --init
+
+# NeoVim config is a separate repo (see config/nvim.md)
+git clone git@github.com:pratikgajjar/nvim.git $HOME/config/nvim
 
 # XDG symlinks (configs live under ~/config, apps read ~/.config)
 ln -sfn $HOME/config/ghostty $HOME/.config/ghostty   # without this, Cmd->tmux keybinds don't load
@@ -37,7 +39,7 @@ Not in the repo, set up by hand: `~/.gitconfig`, SSH/GPG keys, `~/shell/private`
 | Shell | Zsh + Oh-My-Zsh, [starship](https://starship.rs) prompt, [atuin](https://atuin.sh) history, direnv + nix-direnv — split into `shell/{aliases,funcs,options,plugins,tools}` |
 | Terminal | [Ghostty](https://ghostty.org) (`config/ghostty`), Wezterm as backup |
 | Multiplexer | tmux (`.config/tmux`) — Catppuccin theme, extended-keys (csi-u), resurrect + continuum session restore |
-| Editor | NeoVim, maintained as a submodule → [pratikgajjar/nvim](https://github.com/pratikgajjar/nvim) |
+| Editor | NeoVim — separate repo, cloned not vendored → [pratikgajjar/nvim](https://github.com/pratikgajjar/nvim) (`config/nvim.md`) |
 | System | nix-darwin flake (`nix/`) — declarative macOS packages, homebrew casks, firewall settings |
 | Git | gitui + tig configs, global gitignore |
 | Scripts | `local/bin/` — tmux-sessionizer, fuzzy-sys, clipboard helpers, misc utilities |

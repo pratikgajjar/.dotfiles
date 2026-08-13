@@ -4,3 +4,4 @@ styles
 __pycache__/
 *.pyc
 shell/private
+config/nvim/
