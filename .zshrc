@@ -163,6 +163,8 @@ alias docker='podman'
 alias codex-yolo="codex --dangerously-bypass-approvals-and-sandbox"
 
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+# npm global prefix (nix nodejs installs into a read-only store, so npm -g needs its own prefix)
+export PATH="$HOME/.npm-global/bin:$HOME/.local/bin:$PATH"
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
 
