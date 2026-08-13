@@ -34,6 +34,7 @@
           pkgs.neovim
           pkgs.tmux
           pkgs.gnupg
+          pkgs.pinentry_mac
           pkgs.maccy
           pkgs.ripgrep
           pkgs.zoxide
@@ -211,6 +212,14 @@
         screencapture.location = "~/Downloads/screencapture";
         screencapture.type = "png";
       };
+
+      # screencapture.location points at a directory macOS will not create itself;
+      # without it screenshots silently fall back and Finder shows a broken alias.
+      system.activationScripts.postActivation.text = ''
+        sudo -u ${config.system.primaryUser} mkdir -p "$HOME/Downloads/screencapture" 2>/dev/null || true
+        mkdir -p /Users/${config.system.primaryUser}/Downloads/screencapture
+        chown ${config.system.primaryUser} /Users/${config.system.primaryUser}/Downloads/screencapture
+      '';
 
       # Auto upgrade nix package and the daemon service.
       # nix.package = pkgs.nix;
