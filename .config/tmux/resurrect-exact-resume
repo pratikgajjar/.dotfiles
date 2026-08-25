@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+pane_pid="$1"
+[[ -n "$pane_pid" ]] || exit 0
+
+pane_id="$(tmux list-panes -a -F '#{pane_pid} #{pane_id}' | awk -v pid="$pane_pid" '$1 == pid { print $2; exit }')"
+pi_session_id="$(tmux show-option -pqv -t "$pane_id" @pi-session-id 2>/dev/null)"
+if [[ -n "$pi_session_id" ]]; then
+  printf '%q %q\n' "$HOME/.local/bin/pi-resume-session" "$pi_session_id"
+  exit 0
+fi
+
+root_command="$(ps -p "$pane_pid" -o args= | sed 's/^ *//')"
+case "$root_command" in
+  *pi-resume-session*|*codex-resume-session*)
+    printf '%s\n' "$root_command"
+    ;;
+  *)
+    ps -ao "ppid,args" |
+      sed 's/^ *//' |
+      grep "^${pane_pid} " |
+      cut -d' ' -f2-
+    ;;
+esac
