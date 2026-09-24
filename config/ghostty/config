@@ -51,3 +51,7 @@ keybind = super+Digit7=text:\u{0060}7
 keybind = super+Digit8=text:\u{0060}8
 keybind = super+Digit9=text:\u{0060}9
 
+
+# Send Alt/Meta escapes instead of composing accented characters.
+# Without this, alt+up and every other Alt binding never reaches the app.
+macos-option-as-alt = true

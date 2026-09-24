@@ -1,2 +1,1 @@
-#!/bin/zsh
-pi --session "$1"
+/Users/pratikgajjar/ambitious/pi-config/scripts/pi-resume-session

@@ -192,3 +192,12 @@ alias gcm='git checkout main'
 # Save tmux session (resurrect) then reboot — restores exact layout on next boot
 alias reboot-save='~/.config/tmux/plugins/tmux-resurrect/scripts/save.sh && sudo reboot'
 alias codex="codex-yolo"
+
+. "$HOME/.local/bin/env"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Keep local command wrappers ahead of app-owned launchers.
+export PATH="$HOME/local/bin:$PATH"
