@@ -64,7 +64,7 @@ then
   export LC_CTYPE=UTF-8
   export TERMINAL=tmux
   export TERM=tmux-256color
-  export BROWSER="open -a firefox"
+  export BROWSER="open"
 fi
 
 export LF_ICONS="\
