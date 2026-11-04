@@ -46,15 +46,10 @@ git clone https://github.com/wfxr/forgit
 
 ### Linux (Ubuntu server)
 
-Same files, no nix. Everything macOS-only is guarded, so it is a no-op here.
+Same files, no nix. Everything macOS-only is guarded, so it is a no-op here. After `dot checkout`:
 
 ```sh
-sudo apt install zsh git-delta fzf fd-find ripgrep eza bat zoxide direnv tree
-ln -s "$(command -v fdfind)" ~/.local/bin/fd
-ln -s "$(command -v batcat)" ~/.local/bin/bat
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin
-chsh -s /bin/zsh
+~/local/bin/dot-setup-linux   # apt tools, oh-my-zsh, starship, ~/.shell plugins, tpm, chsh to zsh (idempotent)
 ```
 
 - tmux always starts zsh, and on Linux it copies over OSC 52 and restores sessions at boot (`@continuum-boot`).

@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# One-time shell setup on an Ubuntu/Debian box, after `dot checkout`. Idempotent.
+# Installs zsh + the CLI tools the dotfiles alias, oh-my-zsh, starship, the zsh
+# plugins under ~/.shell, tmux plugin manager, and makes zsh the login shell.
+set -euo pipefail
+command -v apt-get >/dev/null || { echo "apt-get not found: Debian/Ubuntu only" >&2; exit 1; }
+
+sudo apt-get update -q
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
+  zsh tmux git git-delta fzf fd-find ripgrep eza bat zoxide direnv tree curl
+
+mkdir -p ~/.local/bin
+[ -e ~/.local/bin/fd ]  || ln -s "$(command -v fdfind)" ~/.local/bin/fd
+[ -e ~/.local/bin/bat ] || ln -s "$(command -v batcat)" ~/.local/bin/bat
+
+[ -d ~/.oh-my-zsh ] || RUNZSH=no KEEP_ZSHRC=yes sh -c \
+  "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+command -v starship >/dev/null || curl -fsSL https://starship.rs/install.sh | sh -s -- -y -b ~/.local/bin
+
+mkdir -p ~/.shell
+clone() { [ -d ~/.shell/"$2" ] || git clone -q --depth 1 "https://github.com/$1" ~/.shell/"$2"; }
+clone zdharma-continuum/fast-syntax-highlighting fast-syntax-Highlighting
+clone zsh-users/zsh-autosuggestions zsh-autosuggestions
+clone zsh-users/zsh-completions zsh-completions
+clone wfxr/forgit forgit
+
+[ -d ~/.tmux/plugins/tpm ] || git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins >/dev/null 2>&1 || echo "tmux plugins: press prefix + I inside tmux"
+
+[ "$(getent passwd "$USER" | cut -d: -f7)" = /bin/zsh ] || sudo chsh -s /bin/zsh "$USER"
+echo "done: open a new login shell (zsh). Check: time zsh -lic exit"
