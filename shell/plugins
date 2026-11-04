@@ -2,5 +2,5 @@
 
 [ -d $HOME/.shell/fast-syntax-Highlighting ] && source $HOME/.shell/fast-syntax-Highlighting/fast-syntax-highlighting.plugin.zsh
 [ -f $HOME/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $HOME/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -d $HOME/.shell/zsh-completions/ ] && fpath=($HOME/.shell/zsh-completions/src $fpath)
+# zsh-completions: added to fpath in ~/.zshrc, before oh-my-zsh runs compinit.
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

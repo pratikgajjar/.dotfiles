@@ -1,9 +1,16 @@
 #!/bin/bash
+# Paste the clipboard to stdout.
+#   macOS          -> pbpaste
+#   Linux with X   -> xclip
+#   headless/SSH   -> top tmux paste buffer (OSC 52 cannot read the local clipboard)
 
-if [[ "$OSTYPE" =~ "darwin"* ]]
-then
-  pbpaste
+if [[ "$OSTYPE" == darwin* ]]; then
+  exec pbpaste
+elif [[ -n "${DISPLAY// }" ]] && command -v xclip >/dev/null; then
+  exec xclip -selection clipboard -o
+elif [[ -n "$TMUX" ]]; then
+  exec tmux save-buffer -
 else
-  xclip -selection clipboard -o
+  echo "cpaste: no clipboard here (no X, not in tmux)" >&2
+  exit 1
 fi
-

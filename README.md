@@ -1,6 +1,6 @@
 # dotfiles
 
-My personal dotfiles for macOS (and Linux), managed as a **bare git repo** checked out directly into `$HOME` — no symlinks, no install scripts.
+My personal dotfiles for macOS and Linux, managed as a **bare git repo** checked out directly into `$HOME` — no symlinks, no install scripts.
 
 ```sh
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -31,6 +31,35 @@ nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch 
 ```
 
 Not in the repo, set up by hand: `~/.gitconfig`, SSH/GPG keys, `~/shell/private` (work-specific aliases), `atuin login`.
+
+### Zsh plugins (both OSes)
+
+`shell/plugins` and `shell/tools` load these only if present:
+
+```sh
+mkdir -p ~/.shell && cd ~/.shell
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting fast-syntax-Highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions
+git clone https://github.com/wfxr/forgit
+```
+
+### Linux (Ubuntu server)
+
+Same files, no nix. Everything macOS-only is guarded, so it is a no-op here.
+
+```sh
+sudo apt install zsh git-delta fzf fd-find ripgrep eza bat zoxide direnv tree
+ln -s "$(command -v fdfind)" ~/.local/bin/fd
+ln -s "$(command -v batcat)" ~/.local/bin/bat
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin
+chsh -s /bin/zsh
+```
+
+- tmux always starts zsh, and on Linux it copies over OSC 52 and restores sessions at boot (`@continuum-boot`).
+- `ccopy` / `cpaste` use the tmux buffer + OSC 52 when there is no X display.
+- Machine-specific env (PATH, secrets) goes in a file outside the repo; `.zshenv` sources `~/.config/pi-agents-env.sh` if it exists.
 
 ## What's inside
 

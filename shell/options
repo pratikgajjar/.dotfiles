@@ -39,6 +39,7 @@ unsetopt menu_complete                                          # do not autosel
 unsetopt nomatch                                                # allow gloobing, e.g apt update kernel*
 setopt complete_aliases                                         # autocompletion CLI switches for aliases
 zstyle ':completion:*' list-colors ''                           # show colors on menu completion
-compinit -d
+# compinit: oh-my-zsh already runs it (with a cached dump). A second call here
+# rebuilt the dump on every shell start (~0.3 s).
 colors
 

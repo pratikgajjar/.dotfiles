@@ -72,6 +72,9 @@ ZSH_THEME="eastwood"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git tmux docker)
 
+# Extra completions must be on fpath before oh-my-zsh runs compinit.
+[ -d $HOME/.shell/zsh-completions/src ] && fpath=($HOME/.shell/zsh-completions/src $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -157,7 +160,7 @@ alias apktool="java -jar /usr/local/bin/apktool"
 export GPG_TTY=$(tty)
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias docker='podman'
+command -v podman >/dev/null && alias docker='podman'
 # Machine/work-specific secrets & aliases (gitignored)
 [ -f "$HOME/shell/private" ] && source "$HOME/shell/private"
 alias codex-yolo="codex --dangerously-bypass-approvals-and-sandbox"

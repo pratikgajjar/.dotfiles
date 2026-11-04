@@ -6,10 +6,16 @@ command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 command -v fuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
 command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 command -v flux > /dev/null 2>&1 && eval "$(flux completion zsh)"
-command -v go >/dev/null 2>&1 && export GOPATH=$HOME/.local/share/go && export PATH=$PATH:$(go env GOPATH)/bin
+# Keep a GOPATH that is already set (pi box: ~/go from pi-agents-env.sh).
+command -v go >/dev/null 2>&1 && export GOPATH=${GOPATH:-$HOME/.local/share/go} && export PATH=$PATH:$GOPATH/bin
 [ -d $HOME/.cargo/bin ] && export PATH=$PATH:~/.cargo/bin
 [ -d $HOME/.luarocks/bin ] && export PATH=$PATH:$HOME/.luarocks/bin
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+# Debian/Ubuntu fzf (no ~/.fzf.zsh, and 0.44 has no `fzf --zsh`)
+if [ ! -f $HOME/.fzf.zsh ] && [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
+fi
 [ -d $HOME/.shell/forgit ] && source $HOME/.shell/forgit/forgit.plugin.zsh
 # command -v brew >/dev/null 2>&1 && FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH # TODO: completions in this path do not work even more break path completion, e.g. kustomize!
 # [ -d $HOME/.local/sdkman/ ] && export SDKMAN_DIR="$HOME/.local/sdkman" && source $HOME/.local/sdkman/bin/sdkman-init.sh

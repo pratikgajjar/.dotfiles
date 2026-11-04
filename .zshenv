@@ -1,6 +1,13 @@
 # This file is sourced by all instances of Zsh and I want
 # this config to be always available
 
+# Keep PATH entries unique: .zshenv runs again in every nested zsh.
+typeset -U path PATH
+
+# pi box: shared agent env (PATH, GOPATH, secrets) that bash loads from
+# .profile/.bashrc. The file does not exist on the Mac, so this is a no-op there.
+[ -f $HOME/.config/pi-agents-env.sh ] && . $HOME/.config/pi-agents-env.sh
+
 command -v vim >/dev/null 2>&1 && export EDITOR=vim
 command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
 
