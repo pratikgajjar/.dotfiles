@@ -63,7 +63,8 @@ if [[ "$OSTYPE" =~ "darwin" ]]
 then
   export LC_CTYPE=UTF-8
   export TERMINAL=tmux
-  export TERM=tmux-256color
+  # Do not force TERM: Ghostty sets xterm-ghostty, tmux sets its own.
+  # A forced tmux-256color made remote oh-my-zsh print raw titles over SSH.
   export BROWSER="open"
 fi
 
